@@ -10,7 +10,7 @@ public class Opciones extends Integracion{
     }
 
     public void integrarHastaSeis(int n) {
-        for(double i = -5.99; i<-5; i +=0.01) {
+        for(double i = -5.99; i<6; i +=0.01) {
             i = (double)Math.round(i*100)/100;
             System.out.println("b = " + i + " Resultado = " + integrar(i, n));
         }
