@@ -1,7 +1,7 @@
 package calculos;
 
 /**
- * Created by Tona on 13/11/2016.
+ * Created by Tonatihu on 13/11/2016.
  */
 public class Opciones extends Integracion{
 

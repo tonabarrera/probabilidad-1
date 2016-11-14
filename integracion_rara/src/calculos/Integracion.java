@@ -1,7 +1,7 @@
 package calculos;
 
 /**
- * Created by Tona on 13/11/2016.
+ * Created by Tonatihu on 13/11/2016.
  */
 public class Integracion {
     private double mu = 0;
@@ -13,7 +13,7 @@ public class Integracion {
         this.rho = rho;
         this.n = n;
         double altura = (b-a)/n;
-        double resultado = -1;
+        double resultado;
         double suma_resultado = sumar(altura, a);
         resultado = (1/(rho*Math.sqrt(2*Math.PI)))*(altura*(((funcionDencidad(a)+funcionDencidad(b))/2)+suma_resultado));
         setParametros(0, 1, 1);
@@ -32,8 +32,7 @@ public class Integracion {
     }
 
     private double funcionDencidad(double x) {
-        double valor = Math.exp(-0.5*(Math.pow((x-mu)/rho, 2)));
-        return valor;
+        return Math.exp(-0.5*(Math.pow((x-mu)/rho, 2)));
     }
 
     public void setParametros(double mu, double rho, int n){
