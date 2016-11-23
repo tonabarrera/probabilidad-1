@@ -20,8 +20,16 @@ public class interfaz extends javax.swing.JFrame {
     /**
      * Creates new form interfaz
      */
+    
+    static final int nfinal = 1000;
+    resultados res;
+    int posx,posy;
     public interfaz() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        this.setResizable(false);
+        res = new resultados();
+        res.frame();
     }
 
     /**
@@ -39,17 +47,16 @@ public class interfaz extends javax.swing.JFrame {
         sigmaTxt = new javax.swing.JTextField();
         calcularBtn = new javax.swing.JButton();
         autoTxt = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        pizarron = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        ene = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        aTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         aTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aTxtActionPerformed(evt);
@@ -78,8 +85,6 @@ public class interfaz extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setViewportView(pizarron);
-
         jLabel1.setText("a");
 
         jLabel2.setText("b");
@@ -88,65 +93,61 @@ public class interfaz extends javax.swing.JFrame {
 
         jLabel4.setText("σ");
 
-        ene.setText("100");
-
         jLabel5.setText("n");
+
+        jLabel6.setText("1000");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ene)
-                    .addComponent(aTxt)
-                    .addComponent(bTxt)
-                    .addComponent(miuTxt)
-                    .addComponent(sigmaTxt)
-                    .addComponent(calcularBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(autoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-                .addGap(54, 54, 54)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(aTxt)
+                        .addComponent(bTxt)
+                        .addComponent(miuTxt)
+                        .addComponent(sigmaTxt)
+                        .addComponent(calcularBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(autoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                    .addComponent(jLabel6))
+                .addGap(376, 376, 376))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(aTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(miuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(sigmaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ene, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(calcularBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(autoTxt))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(aTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(miuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sigmaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addGap(101, 101, 101)
+                .addComponent(calcularBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(autoTxt)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
@@ -161,25 +162,36 @@ public class interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_miuTxtActionPerformed
 
+    String a,b,miu,sigma;
     private void calcularBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularBtnActionPerformed
         try{
-            double a = Double.parseDouble(aTxt.getText());
-            double b = Double.parseDouble(bTxt.getText());
-            double miu = Double.parseDouble(miuTxt.getText());
-            double sigma = Double.parseDouble(sigmaTxt.getText());
-            int n = Integer.parseInt(ene.getText());
-            double resultado = 0;
+            a = (aTxt.getText());
+            b = (bTxt.getText());
+            miu = (miuTxt.getText());
+            sigma = (sigmaTxt.getText());
             
-            if(sigma < 0) throw new SigmaMenorQueCero();
             
-            Integracion integral = new Integracion();
             
-            resultado = integral.integrar(sigma, miu, a, b, n);
             
-            pizarron.setText("El resultado es: " + resultado);
-        }
-        catch(SigmaMenorQueCero e){
-            JOptionPane.showMessageDialog(rootPane, "Sus datos son incorrectos buen hombre.\n" + e.getMessage());
+            res.mostrar(true);
+            res.mostrarResultados(a,b,miu,sigma);
+            
+            posx = this.getX();
+            posy = this.getY();
+            
+            try
+            {
+                while(posx >= 300)
+                {
+                    this.setLocation(posx,posy);
+                    posx-=3;
+                    Thread.sleep(1);
+                }
+            }catch(Exception ex)
+            {
+                System.out.println("No movimos nada jaja");
+            }
+            
         }
         catch(NumberFormatException e){
             JOptionPane.showMessageDialog(rootPane, "Sus datos son incorrectos buen hombre.\n" + "No hemos podido convertir a uno o más datos.");
@@ -187,43 +199,10 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_calcularBtnActionPerformed
 
     private void autoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autoTxtActionPerformed
-        FileWriter fichero = null;
-        PrintWriter pw = null;
-        try{
-            int n = Integer.parseInt(ene.getText());
-            double resultado = 0;
-            
-            
-            String temp = "";
-            
-            Integracion integral = new Integracion();
-            
-            fichero = new FileWriter("resultados.txt");
-            pw = new PrintWriter(fichero);
-            
-            pizarron.setText("Calculando...");
-            for(double i = -5.99; i<6; i +=0.01) {
-                i = (double)Math.round(i*100)/100;
-                temp = "b = " + i + " Resultado = " + integral.integrar(i, n);
-                pw.println(temp);
-                System.out.println(temp);
-            }
-            
-            pizarron.setText("El resultado es: " + "ta muy grande para mostrarlo aqui, mejor ve el archivo resultados.txt");
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Sus datos son incorrectos buen hombre.\n" +e+ "No hemos podido convertir a uno o más datos.");
-        }
-        finally{
-            try {
-                if (null != fichero){
-                   fichero.close();
-                }
-            }
-            catch (Exception e2) {
-                e2.printStackTrace();
-           }
-        }
+        
+        res.modoAutomatico();
+        res.mostrar(true);
+        
     }//GEN-LAST:event_autoTxtActionPerformed
 
     /**
@@ -266,15 +245,13 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JButton autoTxt;
     private javax.swing.JTextField bTxt;
     private javax.swing.JButton calcularBtn;
-    private javax.swing.JTextField ene;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField miuTxt;
-    private javax.swing.JTextPane pizarron;
     private javax.swing.JTextField sigmaTxt;
     // End of variables declaration//GEN-END:variables
 }
