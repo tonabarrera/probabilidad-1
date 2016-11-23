@@ -7,9 +7,12 @@ package interfaz;
 
 import calculos.Integracion;
 import excepciones.SigmaMenorQueCero;
+import java.awt.Color;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.border.Border;
 
 /**
  *
@@ -53,15 +56,11 @@ public class interfaz extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         aTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        aTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aTxtActionPerformed(evt);
-            }
-        });
 
         miuTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,111 +96,177 @@ public class interfaz extends javax.swing.JFrame {
 
         jLabel6.setText("1000");
 
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel7.setText("Integraciones");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(155, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(28, 28, 28)
+                        .addComponent(bTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(aTxt)
+                            .addComponent(miuTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(sigmaTxt))))
+                .addGap(215, 215, 215))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addGap(88, 88, 88))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(203, 203, 203)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(aTxt)
-                        .addComponent(bTxt)
-                        .addComponent(miuTxt)
-                        .addComponent(sigmaTxt)
-                        .addComponent(calcularBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(autoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-                    .addComponent(jLabel6))
-                .addGap(376, 376, 376))
+                    .addComponent(autoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calcularBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel7)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(aTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(miuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sigmaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addGap(101, 101, 101)
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(miuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sigmaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(58, 58, 58)
                 .addComponent(calcularBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(autoTxt)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void aTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aTxtActionPerformed
-
     private void miuTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miuTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miuTxtActionPerformed
 
-    String a,b,miu,sigma;
+    //String a,b,miu,sigma;
     private void calcularBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularBtnActionPerformed
-        try{
-            a = (aTxt.getText());
-            b = (bTxt.getText());
-            miu = (miuTxt.getText());
-            sigma = (sigmaTxt.getText());
+        
+        String error="";
+        int flag = 0;
+        double a1=0,a2=0,a3=0,a4=0;
+        
+        
+        try{ 
             
-            
-            
-            
-            res.mostrar(true);
-            res.mostrarResultados(a,b,miu,sigma);
-            
-            posx = this.getX();
-            posy = this.getY();
-            
-            try
-            {
-                while(posx >= 300)
-                {
-                    this.setLocation(posx,posy);
-                    posx-=3;
-                    Thread.sleep(1);
-                }
-            }catch(Exception ex)
-            {
-                System.out.println("No movimos nada jaja");
-            }
-            
+            a1 = Double.parseDouble(aTxt.getText());
+            aTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.green));
         }
         catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(rootPane, "Sus datos son incorrectos buen hombre.\n" + "No hemos podido convertir a uno o más datos.");
+            flag = 1;
+            error += "Introduce un numero en \"a\" \n";
+            aTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.red));
         }
+        
+        try{  
+            a2 = Double.parseDouble(bTxt.getText());
+            bTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.green));
+        }
+        catch(NumberFormatException e){
+            flag = 1;
+            error += "Introduce un numero en \"b\" \n";
+            bTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.red));
+        }
+        
+        try{  
+            a3 = Double.parseDouble(miuTxt.getText());
+            miuTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.green));
+        }
+        catch(NumberFormatException e){
+            flag = 1;
+            error += "Introduce un numero en \"miu\" \n";
+            
+            miuTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.red));
+        }
+        
+        
+        try{  
+            a4 = Double.parseDouble(sigmaTxt.getText());
+            sigmaTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.green));
+        }
+        catch(NumberFormatException e)
+        {
+            flag = 1;
+            error += "Introduce un numero en \"sigma\" \n";
+            sigmaTxt.setBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.red));
+        }
+            if(flag==0)
+            {
+
+                res.mostrar(true);
+                res.mostrarResultados(a1,a2,a3,a4);
+                    
+                mover();
+                
+            }else
+            {
+                  JOptionPane.showMessageDialog(rootPane, error);
+        
+            }
+        /**/
     }//GEN-LAST:event_calcularBtnActionPerformed
 
+    private void mover()
+    {
+        posx = this.getX();
+                posy = this.getY();
+
+                try
+                {
+                    while(posx >= 300)
+                    {
+                        this.setLocation(posx,posy);
+                        posx-=3;
+                        Thread.sleep(1);
+                    }
+                    
+                }catch(Exception ex)
+                {
+                    System.out.println("No movimos nada jaja");
+                }
+    }
+    
+    
     private void autoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autoTxtActionPerformed
         
         res.modoAutomatico();
         res.mostrar(true);
+        mover();
         
     }//GEN-LAST:event_autoTxtActionPerformed
 
@@ -251,6 +316,7 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField miuTxt;
     private javax.swing.JTextField sigmaTxt;
     // End of variables declaration//GEN-END:variables

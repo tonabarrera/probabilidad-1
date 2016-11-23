@@ -14,6 +14,7 @@ public class resultados extends JFrame implements ActionListener
     private int posx,posy;
      public void frame()
     {
+        
         this.setSize(800, 600);
         this.setLocationRelativeTo(this);
         posx = this.getX();
@@ -36,9 +37,13 @@ public class resultados extends JFrame implements ActionListener
         
         
         txtArea = new JTextArea("Resultados");
-        txtArea.setBounds(100, 75, 600, 400);
-        add(txtArea);
         txtArea.setVisible(true);
+        
+        JScrollPane scroll = new JScrollPane(txtArea);
+        scroll.setBounds(100, 75, 600, 400);
+        scroll.setVisible(true);
+        add(scroll);
+        
         
        this.setVisible(false);
        //this.setVisible(true);
@@ -60,18 +65,10 @@ public class resultados extends JFrame implements ActionListener
          }
      }
      
-    public static void main(String[] args) {
-        resultados res = new resultados();
-        res.frame();
-    }
-     
-    public void mostrarResultados(String a1,String b2,String miu1,String sigma1)
+    public void mostrarResultados(double a,double b,double miu,double sigma)
     {
         try{
-            double a = Double.parseDouble(a1);
-            double b = Double.parseDouble(b2);
-            double miu = Double.parseDouble(miu1);
-            double sigma = Double.parseDouble(sigma1);
+
             int n = nfinal;
             double resultado = 0;
             
@@ -98,6 +95,7 @@ public class resultados extends JFrame implements ActionListener
         try{
             int n = nfinal;
             double resultado = 0;
+            String tempf="";
             
             
             String temp = "";
@@ -113,10 +111,12 @@ public class resultados extends JFrame implements ActionListener
                 i = (double)Math.round(i*100)/100;
                 temp = "b = " + i + " Resultado = " + integral.integrar(i, n);
                 pw.println(temp);
+                tempf+=temp+"\n";
+                
                 System.out.println(temp);
             }
-            
-            txtArea.setText("El resultado es: " + "ta muy grande para mostrarlo aqui, mejor ve el archivo resultados.txt");
+            txtArea.setText(tempf);
+            //txtArea.setText("El resultado es: " + "ta muy grande para mostrarlo aqui, mejor ve el archivo resultados.txt");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Sus datos son incorrectos buen hombre.\n" +e+ "No hemos podido convertir a uno o más datos.");
